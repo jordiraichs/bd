@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteDatabase.CursorFactory
 * context: this
 * name: nom BD
 * factory: permet retornar objectes cursor
-* version: versió BD
+* version: versió BD exemple
  */
 class DatabaseHandler(context: Context, name: String, factory: CursorFactory?, version: Int) : SQLiteOpenHelper(context, name, factory, version) {
 
@@ -19,7 +19,6 @@ class DatabaseHandler(context: Context, name: String, factory: CursorFactory?, v
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL("create table productes(codi text primary key, nom text)")
     }
-
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
 
     }
