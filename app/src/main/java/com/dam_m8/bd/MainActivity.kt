@@ -7,6 +7,8 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import android.content.ContentValues
+import android.content.Intent
+import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +16,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val btnNavigate: Button = findViewById(R.id.btnNavigate)
+        btnNavigate.setOnClickListener {
+            // Creamos un Intent para iniciar SecondActivity
+            val intent = Intent(this@MainActivity, MainActivity2::class.java)
+            startActivity(intent)
+        }
+
+
     }
 
     fun inserirProducte(v: View) {
